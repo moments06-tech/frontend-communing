@@ -25,7 +25,7 @@ export default function Header() {
             Welcome to my Cute Friend IQA
           </span>
 
-          <span className="sm:hidden">Cutie ❤️</span>
+          <span className="sm:hidden"> Princess 👰‍♀️❤️</span>
         </h1>
 
         <span className="hidden text-2xl text-pink-500 sm:inline-block">

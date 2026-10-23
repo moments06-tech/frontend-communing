@@ -3,6 +3,21 @@ import { Host, initialMessages } from "../constant";
 import { Context } from "../context/Context";
 import MessageLoader from "./MessageLoader";
 
+function formatDate(dateString) {
+  const date = new Date(dateString);
+
+  return date.toLocaleString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+    timeZone: "Asia/Karachi",
+  });
+}
+
 export default function ChatBox() {
   const { messageDb, setMessagesDb } = useContext(Context);
 
@@ -61,13 +76,16 @@ export default function ChatBox() {
 
         <div className="flex-1">
           <h2 className="font-bold ml-4 text-pink-600">Our Cute Chat</h2>
-          {/* <p className="text-sm text-purple-500">
-            <span className="mr-1 text-green-500">●</span>
-            Your cute chat friend
-          </p> */}
+          <p className="text-sm mr-4 text-purple-500">
+            {/* <span className="mr-1 text-green-500">🎵</span> */}
+            <audio controls preload="metadata" className="w-full">
+              <source src="/whistle.mp3" type="audio/mpeg" />
+              Your browser does not support audio playback.
+            </audio>
+          </p>
         </div>
 
-        <span className="text-xl tracking-widest text-pink-400">•••</span>
+        {/* <span className="text-xl tracking-widest text-pink-400">•••</span> */}
       </div>
 
       {/* Messages */}
@@ -108,7 +126,7 @@ export default function ChatBox() {
                   </div>
 
                   <span className="mt-1 px-2 text-xs text-pink-400">
-                    {message.createdAt}
+                    {formatDate(message.createdAt)}
                   </span>
                 </div>
 

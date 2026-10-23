@@ -9,7 +9,7 @@ export default function Content() {
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 items-start gap-5 lg:grid-cols-12 lg:gap-5">
         {/* Left: 3 columns */}
         <div className="order-2 lg:order-1 lg:col-span-3">
-          <Sidebar title="My Favorite Things" emoji="💗" cards={leftCards} />
+          <Sidebar title="Our Favorite Things" emoji="💗" cards={leftCards} />
         </div>
 
         {/* Center: 6 columns */}
